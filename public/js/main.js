@@ -8,6 +8,22 @@ function myFunction() {
   // 'img-circle' is a bootstrap thing! Check out more here: http://getbootstrap.com/css/
   $("#doge-image").append(`<img class="img-circle" src="/images/wowdoge.jpeg" />`);
 }
+function initializeStreamListener() {
+  const databaseStreamReference = firebase.database().ref('/stream/');
+
+  databaseStreamReference.on('value', function(snapshot) {
+    var messages = snapshot.val();
+    $('#stream').empty();
+
+    if (messages) {
+      Object.keys(messages).forEach(function (key) {
+        const message = messages[key];
+        $('#stream').append(`<div>${message.body}</div>`);
+      });
+    }
+  });
+}
+
 function addMessage(body, title) {
   var user = firebase.auth().currentUser;
   var authorPic = user.photoURL;
