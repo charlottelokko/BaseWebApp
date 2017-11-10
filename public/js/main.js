@@ -54,6 +54,13 @@ function handleMessageFormSubmit() {
   addMessage(body, title);
 }
 
+function handleMessageFormDelete() {
+  var body = $('#new-post-body').val();
+  var title = $('#new-post-title').val();
+
+  deleteMessage(body, title);
+}
+
 // Gets called whenever the user clicks "sign in" or "sign out".
 function toggleSignIn() {
   if (!firebase.auth().currentUser) { // if no user, handle login

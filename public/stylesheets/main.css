@@ -14,6 +14,12 @@ p {
   font-size: 30px;
 }
 
+.boo{
+  font-family: "Sans-serif";
+  text-align: left;
+  font-size: 50px;
+}
+
 #doge-image img {
   height: 140px;
   margin-top: 20px;

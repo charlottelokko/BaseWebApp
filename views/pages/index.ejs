@@ -11,29 +11,31 @@
     <h1>Stream</h1>
   </div>
 
-  <button id="login-button" class="btn btn-default" type="button" onclick="toggleSignIn()">
+  <button id="login-button" class="btn btn-danger" type="button" onclick="toggleSignIn()">
     Sign In to view the stream
   </button>
 
   <section id="add-post">
-    <h2 class="md1-card_title-text">New Post</h2>
+    <h2 class="md1-card_title-text" >New Post</h2>
   
   <form id="message-form" action="#">
     <div class="form-group">
-      <label for="new-post-title">
+      <label  for="new-post-title">
         Post title...
       </label>
       <input type="text" id="new-post-title">
     </div>
 
     <div class="form-group">
-      <label for="new-post-body">
+      <label  for="new-post-body">
         Post message......
       </label>
       <textarea rows="4" id="new-post-body"></textarea>
     </div>
 
-    <button type="submit" class="btn btn-default" onclick="handleMessageFormSubmit()">Add Post!</button>
+    <button  type="submit" class="btn btn-info" onclick="handleMessageFormSubmit()">Add Post!</button>
+    <button  type="submit" class="btn btn-info" onclick="handleMessageFormSubmit()">Delete Post!</button>
+    
   </form>
   </section>
 
