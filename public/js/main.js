@@ -54,13 +54,6 @@ function handleMessageFormSubmit() {
   addMessage(body, title);
 }
 
-function handleMessageFormDelete() {
-  var body = $('#new-post-body').val();
-  var title = $('#new-post-title').val();
-
-  deleteMessage(body, title);
-}
-
 // Gets called whenever the user clicks "sign in" or "sign out".
 function toggleSignIn() {
   if (!firebase.auth().currentUser) { // if no user, handle login
@@ -82,6 +75,7 @@ function toggleSignIn() {
 // The main purpose of this function is to set up a listener (using firebase) for when the auth state changes.
 // If a user isn't authenticated, we should not show the stream and prompt them to log in.
 // If a use IS authenticated, we should load/show the stream and give them the option to log out.
+
 window.onload = function() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
